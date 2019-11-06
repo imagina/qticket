@@ -1,8 +1,5 @@
 <template></template>
 <script>
-  //Component
-  import crud from '@imagina/qcrud/_components/crud'
-
   export default {
     computed: {
       crudData() {
@@ -40,21 +37,27 @@
               label: this.$tr('qticket.layout.form.subject'),
               value: '',
               type: 'text',
-              isRequired: true,
+              rules: [
+                val => !!val || this.$tr('ui.message.fieldRequired')
+              ],
               isTranslatable: false,
             },
             message: {
               label: this.$tr('qticket.layout.form.message'),
               value: '',
               type: 'text',
-              isRequired: true,
+              rules: [
+                val => !!val || this.$tr('ui.message.fieldRequired')
+              ],
               isTranslatable: false,
             },
             fullName: {
               label: this.$tr('qticket.layout.form.fullName'),
               value: '',
               type: 'text',
-              isRequired: true,
+              rules: [
+                val => !!val || this.$tr('ui.message.fieldRequired')
+              ],
               isTranslatable: false,
             },
             phone: {
@@ -79,31 +82,34 @@
               label: `${this.$tr('ui.form.status')}:`,
               value: '1',
               type: 'select',
+              isFakeField : false,
               options: [
-                {label: this.$tr('qticket.layout.form.statuses.open'), id: '0'},
-                {label: this.$tr('qticket.layout.form.statuses.pending'), id: '1'},
-                {label: this.$tr('qticket.layout.form.statuses.closed'), id: '2'},
+                {label: this.$tr('qticket.layout.form.statuses.open'), value: '0'},
+                {label: this.$tr('qticket.layout.form.statuses.pending'), value: '1'},
+                {label: this.$tr('qticket.layout.form.statuses.closed'), value: '2'},
               ],
             },
             priority : {
               label: `${this.$tr('qticket.layout.form.priority')}:`,
               value: '1',
+              isFakeField : false,
               type: 'select',
               options: [
-                {label: this.$tr('qticket.layout.form.priorities.low'), id: '0'},
-                {label: this.$tr('qticket.layout.form.priorities.high'), id: '1'},
-                {label: this.$tr('qticket.layout.form.priorities.critical'), id: '2'},
+                {label: this.$tr('qticket.layout.form.priorities.low'), value: '0'},
+                {label: this.$tr('qticket.layout.form.priorities.high'), value: '1'},
+                {label: this.$tr('qticket.layout.form.priorities.critical'), value: '2'},
               ],
             },
             type : {
               label: `${this.$tr('ui.form.type')}:`,
               value: '1',
+              isFakeField : false,
               type: 'select',
               options: [
-                {label: this.$tr('qticket.layout.form.types.question'), id: '0'},
-                {label: this.$tr('qticket.layout.form.types.complain'), id: '1'},
-                {label: this.$tr('qticket.layout.form.types.claim'), id: '2'},
-                {label: this.$tr('qticket.layout.form.types.request'), id: '3'},
+                {label: this.$tr('qticket.layout.form.types.question'), value: '0'},
+                {label: this.$tr('qticket.layout.form.types.complain'), value: '1'},
+                {label: this.$tr('qticket.layout.form.types.claim'), value: '2'},
+                {label: this.$tr('qticket.layout.form.types.request'), value: '3'},
               ],
             },
 
