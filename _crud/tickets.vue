@@ -1,4 +1,5 @@
 <template></template>
+
 <script>
   export default {
     computed: {
@@ -22,9 +23,7 @@
               {name: 'actions', label: this.$tr('ui.form.actions'), align: 'left'},
             ],
             requestParams: {},
-            actions : [
-
-            ]
+            actions : []
           },
           update: {
             title: this.$tr('qticket.layout.updateTicket'),
@@ -34,83 +33,98 @@
           formLeft: {
             options: {value:null},
             subject: {
-              label: this.$tr('qticket.layout.form.subject'),
               value: '',
-              type: 'text',
-              rules: [
-                val => !!val || this.$tr('ui.message.fieldRequired')
-              ],
+              type: 'input',
               isTranslatable: false,
+              props : {
+                label: this.$tr('qticket.layout.form.subject'),
+                rules: [
+                  val => !!val || this.$tr('ui.message.fieldRequired')
+                ],
+              }
+
             },
             message: {
-              label: this.$tr('qticket.layout.form.message'),
               value: '',
-              type: 'text',
-              rules: [
-                val => !!val || this.$tr('ui.message.fieldRequired')
-              ],
+              type: 'html',
               isTranslatable: false,
+              props : {
+                label: this.$tr('qticket.layout.form.message'),
+                rules: [
+                  val => !!val || this.$tr('ui.message.fieldRequired')
+                ],
+              }
             },
             fullName: {
-              label: this.$tr('qticket.layout.form.fullName'),
               value: '',
-              type: 'text',
-              rules: [
-                val => !!val || this.$tr('ui.message.fieldRequired')
-              ],
+              type: 'input',
+              props:{
+                label: this.$tr('qticket.layout.form.fullName'),
+                rules: [
+                  val => !!val || this.$tr('ui.message.fieldRequired')
+                ],
+              },
               isTranslatable: false,
             },
             phone: {
-              label: this.$tr('ui.form.phone'),
               value: '',
               type: 'text',
-              isRequired: false,
               isTranslatable: false,
+              props:{
+                label: this.$tr('ui.form.phone'),
+              }
             },
             email: {
-              label: this.$tr('qticket.layout.form.email'),
               value: '',
               type: 'email',
-              isRequired: false,
               isTranslatable: false,
+              props:{
+                label: this.$tr('qticket.layout.form.email'),
+              }
             },
 
           },
           formRight: {
 
             status : {
-              label: `${this.$tr('ui.form.status')}:`,
               value: '1',
               type: 'select',
               isFakeField : false,
-              options: [
-                {label: this.$tr('qticket.layout.form.statuses.open'), value: '0'},
-                {label: this.$tr('qticket.layout.form.statuses.pending'), value: '1'},
-                {label: this.$tr('qticket.layout.form.statuses.closed'), value: '2'},
-              ],
+              props:{
+                label: `${this.$tr('ui.form.status')}:`,
+                options: [
+                  {label: this.$tr('qticket.layout.form.statuses.open'), value: '0'},
+                  {label: this.$tr('qticket.layout.form.statuses.pending'), value: '1'},
+                  {label: this.$tr('qticket.layout.form.statuses.closed'), value: '2'},
+                ],
+              }
             },
             priority : {
-              label: `${this.$tr('qticket.layout.form.priority')}:`,
               value: '1',
               isFakeField : false,
               type: 'select',
-              options: [
-                {label: this.$tr('qticket.layout.form.priorities.low'), value: '0'},
-                {label: this.$tr('qticket.layout.form.priorities.high'), value: '1'},
-                {label: this.$tr('qticket.layout.form.priorities.critical'), value: '2'},
-              ],
+              props:{
+                label: `${this.$tr('qticket.layout.form.priority')}:`,
+                options: [
+                  {label: this.$tr('qticket.layout.form.priorities.low'), value: '0'},
+                  {label: this.$tr('qticket.layout.form.priorities.high'), value: '1'},
+                  {label: this.$tr('qticket.layout.form.priorities.critical'), value: '2'},
+                ],
+              }
             },
             type : {
-              label: `${this.$tr('ui.form.type')}:`,
               value: '1',
               isFakeField : false,
               type: 'select',
-              options: [
-                {label: this.$tr('qticket.layout.form.types.question'), value: '0'},
-                {label: this.$tr('qticket.layout.form.types.complain'), value: '1'},
-                {label: this.$tr('qticket.layout.form.types.claim'), value: '2'},
-                {label: this.$tr('qticket.layout.form.types.request'), value: '3'},
-              ],
+              props:{
+                label: `${this.$tr('ui.form.type')}:`,
+                options: [
+                  {label: this.$tr('qticket.layout.form.types.question'), value: '0'},
+                  {label: this.$tr('qticket.layout.form.types.complain'), value: '1'},
+                  {label: this.$tr('qticket.layout.form.types.claim'), value: '2'},
+                  {label: this.$tr('qticket.layout.form.types.request'), value: '3'},
+                ],
+              }
             },
 
           },
