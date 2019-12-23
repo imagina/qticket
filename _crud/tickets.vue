@@ -15,7 +15,7 @@
             columns: [
               {name: 'id', label: this.$tr('ui.form.id'), field: 'id', style: 'width: 50px'},
               {name: 'subject', label: this.$tr('qticket.layout.form.subject'), field: 'subject', align: 'center'},
-              {name: 'status', label: this.$tr('ui.form.status'), field: 'status', align: 'center'},
+              {name: 'status', label: this.$tr('ui.form.status'), field: 'statusLabel', align: 'center'},
               {
                 name: 'created_at', label: this.$tr('ui.form.createdAt'), field: 'createdAt', align: 'left',
                 format: val => val ? this.$trd(val) : '-',
@@ -53,33 +53,6 @@
                 rules: [
                   val => !!val || this.$tr('ui.message.fieldRequired')
                 ],
-              }
-            },
-            fullName: {
-              value: '',
-              type: 'input',
-              props:{
-                label: this.$tr('qticket.layout.form.fullName'),
-                rules: [
-                  val => !!val || this.$tr('ui.message.fieldRequired')
-                ],
-              },
-              isTranslatable: false,
-            },
-            phone: {
-              value: '',
-              type: 'text',
-              isTranslatable: false,
-              props:{
-                label: this.$tr('ui.form.phone'),
-              }
-            },
-            email: {
-              value: '',
-              type: 'email',
-              isTranslatable: false,
-              props:{
-                label: this.$tr('qticket.layout.form.email'),
               }
             },
 
@@ -126,7 +99,33 @@
                 ],
               }
             },
-
+            fullName: {
+              value: '',
+              type: 'input',
+              props:{
+                label: this.$tr('qticket.layout.form.fullName'),
+                rules: [
+                  val => !!val || this.$tr('ui.message.fieldRequired')
+                ],
+              },
+              isTranslatable: false,
+            },
+            phone: {
+              value: '',
+              type: 'input',
+              isTranslatable: false,
+              props:{
+                label: this.$tr('ui.form.phone'),
+              }
+            },
+            email: {
+              value: '',
+              type: 'input',
+              isTranslatable: false,
+              props:{
+                label: this.$tr('qticket.layout.form.email'),
+              }
+            },
           },
         }
       }
